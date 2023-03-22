@@ -1,0 +1,13 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  /* Table Body */
+  .main-body{ 
+    padding-top: 20px;
+    max-width: 1248px;
+    margin: 0 auto;
+  }
+  /* Filter Section */ 
+  mat-form-field{ 
+    width: 100%;
+  }

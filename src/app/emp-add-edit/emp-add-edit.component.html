@@ -1,0 +1,79 @@
+<div mat-dialog-title>
+    <h1>Employee Form</h1>
+</div>
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()" >
+    <div mat-dialog-content class="content">
+        <!-- First_Name and Last_Name -->
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput type="text" formControlName="firstName">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput type="text" formControlName="lastName">
+            </mat-form-field>
+        </div>
+        <!-- Email and date of birth -->
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" formControlName="email">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Date of Birth</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="dob">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+        </div>
+        <!-- Gender -->
+        <div class="row">
+            <mat-radio-group aria-label="Select an option" formControlName="gender">
+                <mat-label><b>Gender</b></mat-label>
+                <mat-radio-button value="Male">Male</mat-radio-button>
+                <mat-radio-button value="Female">Female</mat-radio-button>
+                <mat-radio-button value="Others">Others</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+        <!-- Education and company name -->
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Education</mat-label>
+                <mat-select formControlName="education">
+                    <!-- here we iterate the values from the ts file stored inside the db-->
+                    <mat-option *ngFor="let values of education" [value]="values">
+                        {{values}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Company</mat-label>
+                <input matInput type="text" formControlName="company">
+            </mat-form-field>
+
+        </div>
+        <!-- Salary and Experience -->
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Experience</mat-label>
+                <input matInput type="number" formControlName="experience">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Salary</mat-label>
+                <input matInput type="number" formControlName="package">
+                <mat-hint>In ruppes</mat-hint>
+            </mat-form-field>
+
+        </div>
+
+    </div>
+<!-- Cancel and save button -->
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close] = 'false' >Cancel</button>
+        <button mat-raised-button color="primary" type="submit" >{{data ?'Update':'Save'}}</button> <!-- button type must be submit then on form tag >> ngSubmit -->
+    </div>
+</form>

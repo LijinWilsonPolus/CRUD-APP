@@ -1,0 +1,46 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "employee": [
+    {
+      "lastName": "lijin",
+      "firstName": "Subin",
+      "email": "subinlijin@gmail.com",
+      "dob": "2023-03-30T18:30:00.000Z",
+      "gender": "Male",
+      "education": "Post Graduate",
+      "company": "sdfg",
+      "experience": 1,
+      "package": 122121,
+      "id": 6
+    },
+    {
+      "lastName": "Lijin",
+      "firstName": "Ashkar",
+      "email": "ashkarlijin@gmail.com",
+      "dob": "2023-03-30T18:30:00.000Z",
+      "gender": "Male",
+      "education": "Diploma",
+      "company": "Sigma inst.",
+      "experience": 1,
+      "package": 12345,
+      "id": 7
+    }
+  ],
+  "cart": []
+}
